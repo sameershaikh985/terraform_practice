@@ -31,9 +31,9 @@ resource "aws_vpc_security_group_egress_rule" "outbound" {
 }
 # Create the EC2 Instances
 resource "aws_instance" "my_instance" {
-  ami = "ami-006f82a1d5a27da54" # OS AMI ID
+  ami = var.instance_ami # OS AMI ID
 
-	instance_type = "t2.micro" # Instance Type
+	instance_type = var.instance_type # Instance Type
 
 	key_name = aws_key_pair.my_key.key_name	# Key pair
 
